@@ -12,45 +12,23 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1 class="app-title">FSJAL Generator</h1>
-                </div>
-                <div class="header-right">
-                    <a href="#" class="header-link">About</a>
-                    <a href="#" class="header-link">Help</a>
-                </div>
-            </div>
-        </header>
-
         <!-- Main Content -->
         <main class="editor-workspace">
             <div class="workspace-container">
                 <!-- Canvas Toolbar -->
                 <div class="canvas-toolbar">
                     <div class="toolbar-section">
-                        <h2 class="canvas-title">Create Your FSJAL</h2>
+                        <h2 class="canvas-title">Create Your FSJAL...</h2>
                     </div>
                     <div class="toolbar-section">
                         <div class="toolbar-actions">
-                            <button id="upload-btn" class="btn-primary">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                    <polyline points="17,8 12,3 7,8"/>
-                                    <line x1="12" y1="3" x2="12" y2="15"/>
-                                </svg>
-                                Upload Asset
-                            </button>
-                            <button id="reset-btn" class="btn-outline">
+                            <button id="reset-btn" class="btn-icon" title="Reset Canvas">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
                                     <path d="M21 3v5h-5"/>
                                     <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/>
                                     <path d="M3 21v-5h5"/>
                                 </svg>
-                                Reset
                             </button>
                             <button id="export-btn" class="btn-primary">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -66,38 +44,8 @@
 
                 <!-- Editor Layout -->
                 <div class="editor-layout">
-                    <!-- Left Sidebar -->
+                    <!-- Left Sidebar - Layers -->
                     <div class="editor-sidebar editor-sidebar-left">
-                        <!-- Color Picker Panel -->
-                        <div class="panel color-picker-panel">
-                            <div class="panel-header">
-                                <h3>Background Color</h3>
-                            </div>
-                            <div class="panel-content">
-                                <div class="color-picker-section">
-                                    <div class="color-picker-input-wrapper">
-                                        <label for="background-color-picker" class="color-picker-label">Custom Color:</label>
-                                        <input type="color" id="background-color-picker" value="#ffffff">
-                                    </div>
-                                    <div class="color-presets">
-                                        <div class="color-preset" style="background-color: #ffffff;" data-color="#ffffff"></div>
-                                        <div class="color-preset" style="background-color: #f0f0f0;" data-color="#f0f0f0"></div>
-                                        <div class="color-preset" style="background-color: #e0e0e0;" data-color="#e0e0e0"></div>
-                                        <div class="color-preset" style="background-color: #d0d0d0;" data-color="#d0d0d0"></div>
-                                        <div class="color-preset" style="background-color: #ffebee;" data-color="#ffebee"></div>
-                                        <div class="color-preset" style="background-color: #e8f5e8;" data-color="#e8f5e8"></div>
-                                        <div class="color-preset" style="background-color: #e3f2fd;" data-color="#e3f2fd"></div>
-                                        <div class="color-preset" style="background-color: #fff3e0;" data-color="#fff3e0"></div>
-                                        <div class="color-preset" style="background-color: #fce4ec;" data-color="#fce4ec"></div>
-                                        <div class="color-preset" style="background-color: #f3e5f5;" data-color="#f3e5f5"></div>
-                                        <div class="color-preset" style="background-color: #e8eaf6;" data-color="#e8eaf6"></div>
-                                        <div class="color-preset" style="background-color: #e0f2f1;" data-color="#e0f2f1"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Layers Panel -->
                         <div class="panel layers-panel">
                             <div class="panel-header">
                                 <h3>Layers</h3>
@@ -110,7 +58,7 @@
                                             <path d="M12 2L2 7v10c0 5.55 3.84 10 9 12 1.16 2 2.84 2 4 0 5.16-2 9-6.45 9-12V7l-10-5z"/>
                                         </svg>
                                         <p>No layers yet</p>
-                                        <p>Add some assets to get started!</p>
+                                        <p>Drag assets to start creating</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,24 +80,63 @@
 
                     <!-- Right Sidebar -->
                     <div class="editor-sidebar editor-sidebar-right">
+                        <!-- Background Color Panel -->
+                        <div class="panel color-picker-panel">
+                            <div class="panel-header">
+                                <h3>Background Color</h3>
+                            </div>
+                            <div class="panel-content">
+                                <div class="color-picker-section">
+                                    <div class="color-picker-input-wrapper">
+                                        <label for="background-color-picker" class="color-picker-label">Pick Color</label>
+                                        <input type="color" id="background-color-picker" value="#ffffff">
+                                    </div>
+                                    <div class="color-presets">
+                                        <div class="color-preset" style="background-color: #ffffff;" data-color="#ffffff"></div>
+                                        <div class="color-preset" style="background-color: #000000;" data-color="#000000"></div>
+                                        <div class="color-preset" style="background-color: #ff0000;" data-color="#ff0000"></div>
+                                        <div class="color-preset" style="background-color: #00ff00;" data-color="#00ff00"></div>
+                                        <div class="color-preset" style="background-color: #0000ff;" data-color="#0000ff"></div>
+                                        <div class="color-preset" style="background-color: #ffff00;" data-color="#ffff00"></div>
+                                        <div class="color-preset" style="background-color: #ff00ff;" data-color="#ff00ff"></div>
+                                        <div class="color-preset" style="background-color: #00ffff;" data-color="#00ffff"></div>
+                                        <div class="color-preset" style="background-color: #f0f0f0;" data-color="#f0f0f0"></div>
+                                        <div class="color-preset" style="background-color: #808080;" data-color="#808080"></div>
+                                        <div class="color-preset" style="background-color: #ffa500;" data-color="#ffa500"></div>
+                                        <div class="color-preset" style="background-color: #800080;" data-color="#800080"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <!-- Assets Panel -->
                         <div class="panel assets-panel">
                             <div class="panel-header">
                                 <h3>Assets</h3>
+                                <button id="upload-btn" class="btn-upload">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                        <polyline points="17,8 12,3 7,8"/>
+                                        <line x1="12" y1="3" x2="12" y2="15"/>
+                                    </svg>
+                                    Upload
+                                </button>
                             </div>
                             <div class="panel-content">
                                 <!-- Hat Assets -->
                                 <div class="asset-section">
                                     <div class="asset-section-header">
-                                        <h4 class="asset-section-title">Hats</h4>
+                                        <h4 class="asset-section-title">Hat</h4>
                                         <span id="hat-count" class="asset-section-count">0</span>
                                     </div>
                                     <div class="asset-grid" id="hat-grid">
                                         <div class="asset-empty">
                                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                                <path d="M16 14v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h8m-6 4h8"/>
+                                                <circle cx="9" cy="21" r="1"/>
+                                                <circle cx="20" cy="21" r="1"/>
+                                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                                             </svg>
-                                            <p>No hats uploaded</p>
+                                            <p>No hat assets yet</p>
                                         </div>
                                     </div>
                                 </div>
@@ -163,9 +150,11 @@
                                     <div class="asset-grid" id="hair-grid">
                                         <div class="asset-empty">
                                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                                <path d="M16 14v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h8m-6 4h8"/>
+                                                <circle cx="9" cy="21" r="1"/>
+                                                <circle cx="20" cy="21" r="1"/>
+                                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                                             </svg>
-                                            <p>No hair uploaded</p>
+                                            <p>No hair assets yet</p>
                                         </div>
                                     </div>
                                 </div>
@@ -179,9 +168,11 @@
                                     <div class="asset-grid" id="hands-grid">
                                         <div class="asset-empty">
                                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                                <path d="M16 14v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h8m-6 4h8"/>
+                                                <circle cx="9" cy="21" r="1"/>
+                                                <circle cx="20" cy="21" r="1"/>
+                                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                                             </svg>
-                                            <p>No hands uploaded</p>
+                                            <p>No hand assets yet</p>
                                         </div>
                                     </div>
                                 </div>
@@ -195,9 +186,11 @@
                                     <div class="asset-grid" id="accessories-grid">
                                         <div class="asset-empty">
                                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                                                <path d="M16 14v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h8m-6 4h8"/>
+                                                <circle cx="9" cy="21" r="1"/>
+                                                <circle cx="20" cy="21" r="1"/>
+                                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                                             </svg>
-                                            <p>No accessories uploaded</p>
+                                            <p>No accessory assets yet</p>
                                         </div>
                                     </div>
                                 </div>
